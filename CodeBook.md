@@ -1,8 +1,8 @@
-# The "averages.csv" dataset
+# The averages.txt dataset
 This dataset is derived from the UCI HAR Dataset described here:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
-The averages.csv dataset contains the mean values of all the mean and standard deviation values for each combination of subject and activity described in the UCI HAR dataset. Please see README.md for more information on the processing tasks performed in order to create the averages.csv dataset.
+The averages.txt dataset contains the *mean values of all the mean and standard deviation values* for each combination of subject and activity described in the UCI HAR dataset. Please see README.md for more information on the processing tasks performed in order to create the averages.txt dataset.
 
 # A guide to reading the variables
 Hopefully the variables are fairly self-explanatory, however some additional description is probably helpful. To avoid repetition, I have not included a description for each variable; following is a "legend" of sorts that should clarify what the variables are measuring.
