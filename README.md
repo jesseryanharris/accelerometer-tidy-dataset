@@ -20,7 +20,20 @@ The script accomplishes this merge process by doing the following:
     > y_train <- read.csv(file = "UCI HAR Dataset/train/y_train.txt", sep = "", header = FALSE)
 
 2. For the R data frame generated from features.txt, the script drops the numbering column, then uses the matrix transpose function (t) to reshape the results into a 1 x 561 data frame. This causes the variable names to be horizontally arranged so they can be easily assigned as variable names to the data in the next step.
+
+    > features <- features %>% select(2) %>% t  
+	
 3. The names function is used to assign the variable names "Subject" and "Activity" to the subject and activity data frames. The names function is also used to assign the contents of the data frame generated from features.txt as the column names for the x_test and x_train data frames.
+
+    > names(y_test) <- "Activity"  
+    > names(subject_test) <- "Subject"  
+    > names(y_train) <- "Activity"  
+    > names(subject_train) <- "Subject"  
+    > names(x_test) <- features  
+    > names(x_test) <- make.unique(names(x_test))  
+    > names(x_train) <- features  
+    > names(x_train) <- make.unique(names(x_test))  
+
 4. The dplyr bind_cols and bind_rows functions are used to attach all the data frames together.
 
 ### 2\. Extracts only the measurements on the mean and standard deviation for each measurement.
