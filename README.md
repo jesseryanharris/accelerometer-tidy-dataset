@@ -34,16 +34,49 @@ The script accomplishes this merge process by doing the following:
     > names(x_train) <- features  
     > names(x_train) <- make.unique(names(x_test))  
 
-4. The dplyr bind_cols and bind_rows functions are used to attach all the data frames together.
+4. The dplyr bind_cols and bind_rows functions are used to attach all the data frames together, making a data frame called "complete".
+
+    > test <- bind_cols(subject_test, y_test, x_test)
+    > train <- bind_cols(subject_train, y_train, x_train)
+    > complete <- bind_rows(test, train)
 
 ### 2\. Extracts only the measurements on the mean and standard deviation for each measurement.
-The dplyr select function is used to drop all columns except the Subject and Activity columns and all columns with variable names that contain "mean()", "std()".
+The dplyr select function is used to drop all columns except the Subject and Activity columns and all columns with variable names that contain "mean()", "std()". The resulting data frame is called "extract".
+
+    > extract <- select(complete, matches("Subject|Activity|mean\\(\\)|std\\(\\)"))
 
 ### 3\. Uses descriptive activity names to name the activities in the data set.
-The gsub function is used to replace the numbers in the Activity column with a text description of the corresponding activity, based on the activity_labels.txt file in the UCI HAR dataset. 
+The gsub function is used to replace the numbers in the Activity column with a text description of the corresponding activity, based on the activity_labels.txt file in the UCI HAR dataset.
+
+    > extract$Activity <- gsub("1", "walking", extract$Activity)  
+    > extract$Activity <- gsub("2", "walking upstairs", extract$Activity)  
+    > extract$Activity <- gsub("3", "walking downstairs", extract$Activity)  
+    > extract$Activity <- gsub("4", "sitting", extract$Activity)  
+    > extract$Activity <- gsub("5", "standing", extract$Activity)  
+    > extract$Activity <- gsub("6", "laying", extract$Activity)  
 
 ### 4\. Appropriately labels the data set with descriptive variable names.
 The gsub function is again used to make the variable names more descriptive. 
 
+    > names(extract) <- gsub("^f", "FFT", names(extract))  
+    > names(extract) <- gsub("^t", "", names(extract))  
+    > names(extract) <- gsub("-mean\\(\\)", "Mean", names(extract))  
+    > names(extract) <- gsub("-std\\(\\)", "StdDeviation", names(extract))  
+    > names(extract) <- gsub("BodyBody", "Body", names(extract))  
+    > names(extract) <- gsub("BodyGyro", "AngularVelocity", names(extract))  
+    > names(extract) <- gsub("AngularVelocityJerk", "AngularJerk", names(extract))  
+    > names(extract) <- gsub("BodyAccJerk", "LinearJerk", names(extract))  
+    > names(extract) <- gsub("BodyAcc", "BodyAccel", names(extract))  
+    > names(extract) <- gsub("GravityAcc", "GravityAccel", names(extract))  
+    > names(extract) <- gsub("-X", "XAxis", names(extract))  
+    > names(extract) <- gsub("-Y", "YAxis", names(extract))  
+    > names(extract) <- gsub("-Z", "ZAxis", names(extract))  
 
 ### 5\. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+The dplyr group_by function is used to group the data by Subject and then Activity, then the result is piped to the dplyr summarise_each function to apply the mean function across all variables. I would like to acknowledge Stack Overflow user rrs's post on the following thread as the source for this method: http://stackoverflow.com/questions/21295936/can-dplyr-summarise-over-several-variables-without-listing-each-one.
+
+    > final <- group_by(extract, Subject, Activity) %>% summarise_each(funs(mean))
+	
+Finally, the write.csv function is used to output the tidy data set as a file called "averages.csv".
+
+    > write.csv(final, file = "averages.csv", row.names = FALSE)
