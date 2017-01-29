@@ -8,6 +8,8 @@ This repo contains the following files:
 ## Running run_analysis.R
 In order for run_analysis.R to work, you must download and unzip the UCI HAR dataset, which can be downloaded here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Place the unzipped "UCI HAR Dataset" folder in your R working directory.
 
+**Note:** run_analysis.R requires the dplyr package.
+
 ## Reading averages.txt into R
 You can read the averages.txt file outputted by the script back into R by placing it in your R working directory and running the following command:
 
