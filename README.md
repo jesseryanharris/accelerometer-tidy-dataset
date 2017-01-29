@@ -1,7 +1,7 @@
 # Tidy Dataset Derived from UCI HAR Dataset (Coursera "Getting and Cleaning Data" Course Project)
 This repo contains the following files:
 
-* **run_analysis.R:** Used to process the raw data in the UCI HAR dataset and output an independent tidy dataset called averages.txt.
+* **run_analysis.R:** Used to process the raw data in the UCI HAR dataset and output an independent tidy dataset to a file named "averages.txt".
 * **CodeBook.md:** Describes the variables and summaries calculated in the averages.txt file.
 * **README.md:** This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.txt.
 
