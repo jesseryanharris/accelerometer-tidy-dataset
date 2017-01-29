@@ -11,13 +11,13 @@ The script accomplishes this merge process by doing the following:
 
 1. Using the read.csv function, the script loads the following raw data files as R data frames: features.txt, subject_test.txt, X_test.txt, y_test.txt, subject_train.txt, X_train.txt, y_train.txt.
 
-> features <- read.csv(file = "UCI HAR Dataset/features.txt", sep = "", header = FALSE)  
-subject_test <- read.csv(file = "UCI HAR Dataset/test/subject_test.txt", sep = "", header = FALSE)  
-x_test <- read.csv(file = "UCI HAR Dataset/test/X_test.txt", sep = "", header = FALSE)  
-y_test <- read.csv(file = "UCI HAR Dataset/test/y_test.txt", sep = "", header = FALSE)  
-subject_train <- read.csv(file = "UCI HAR Dataset/train/subject_train.txt", sep = "", header = FALSE)  
-x_train <- read.csv(file = "UCI HAR Dataset/train/X_train.txt", sep = "", header = FALSE)  
-y_train <- read.csv(file = "UCI HAR Dataset/train/y_train.txt", sep = "", header = FALSE)
+    > features <- read.csv(file = "UCI HAR Dataset/features.txt", sep = "", header = FALSE)  
+    > subject_test <- read.csv(file = "UCI HAR Dataset/test/subject_test.txt", sep = "", header = FALSE)  
+    > x_test <- read.csv(file = "UCI HAR Dataset/test/X_test.txt", sep = "", header = FALSE)  
+    > y_test <- read.csv(file = "UCI HAR Dataset/test/y_test.txt", sep = "", header = FALSE)  
+    > subject_train <- read.csv(file = "UCI HAR Dataset/train/subject_train.txt", sep = "", header = FALSE)  
+    > x_train <- read.csv(file = "UCI HAR Dataset/train/X_train.txt", sep = "", header = FALSE)  
+    > y_train <- read.csv(file = "UCI HAR Dataset/train/y_train.txt", sep = "", header = FALSE)
 
 2. For the R data frame generated from features.txt, the script drops the numbering column, then uses the matrix transpose function (t) to reshape the results into a 1 x 561 data frame. This causes the variable names to be horizontally arranged so they can be easily assigned as variable names to the data in the next step.
 3. The names function is used to assign the variable names "Subject" and "Activity" to the subject and activity data frames. The names function is also used to assign the contents of the data frame generated from features.txt as the column names for the x_test and x_train data frames.
