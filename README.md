@@ -1,10 +1,10 @@
 # Tidy Dataset Derived from UCI HAR Dataset (Coursera "Getting and Cleaning Data" Course Project)
 This repo contains the following files:
 
-* **averages.csv:** A tidy dataset derived from the UCI HAR dataset, which I downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+* **averages.csv:** A tidy dataset derived from the UCI HAR dataset, which I downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
 * **run_analysis.R:** This script was used to process the raw data in the UCI HAR dataset and output the averages.csv file.
 * **CodeBook.md:** This file describes the variables and summaries calculated in the averages.csv file.
-** README.md:* This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.csv.
+* **README.md:** This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.csv.
 
 ## Explanation of the run_analysis.R script
 The run_analysis.R script was written to meet the requirements set out in the course project instructions:
