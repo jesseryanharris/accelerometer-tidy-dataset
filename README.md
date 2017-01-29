@@ -1,5 +1,5 @@
 # Tidy Dataset Derived from UCI HAR Dataset (Coursera "Getting and Cleaning Data" Course Project)
-The tidy dataset contained in this GitHub repo (filename: averages.csv) is derived from the UCI HAR dataset, which I downloaded here:
+The tidy dataset contained in this GitHub repo (filename: averages.csv) is derived from the UCI HAR dataset, which I downloaded from here:
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
 
 The run_analysis.R script in this repo was used to process the raw data in the UCI HAR dataset and output the tidied version, the averages.csv file.
