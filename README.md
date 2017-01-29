@@ -56,7 +56,21 @@ The gsub function is used to replace the numbers in the Activity column with a t
 > extract$Activity <- gsub("6", "laying", extract$Activity)  
 
 ### 4\. Appropriately labels the data set with descriptive variable names.
-The gsub function is again used to make the variable names more descriptive. 
+The gsub function is again used to make the variable names more descriptive. Some limited regex expressions were used in this step. The principles I followed in trying to make the variables names more descriptive were:
+
+* Avoid abbreviation when it harms readability.
+* Use CamelCase style to delineate words rather than add whitespace or special characters.
+* Avoid repetition where possible.
+* Try not to make the variable names too long.
+
+Unfortunately, I don't think it is possible to make the variable names *perfectly* descriptive unless you make them a mile long. Also, my ability to make them more descriptive is limited by my lack of understanding of accelerometer and gyroscope data. But anyway, here are some of the choices I made:
+
+* I eliminated the "t" from the beginning of all time domain values. In CodeBook.md I explain that unless otherwise indicated, all values belong to the time domain.
+* For frequency domain values, I replaced the "f" with "FFT", and explained in CodeBook.md that this indicates the values were the results of a Fast Fourier Transform operation.
+* I eliminated the duplication of the word "Body" that existed in some variable names in the UCI HAR dataset.
+* Based on the description of the UCI HAR dataset in features_info.txt and http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones, I renamed "BodyGyro" to "AngularVelocity" and "BodyAccJerk" to "LinearJerk", as I felt these were more a little more understandable than the original names. I also trimmed the "AngularVelocityJerk" variable (resulted from the gsub operation on "BodyGyroJerk") to just "AngularJerk".
+* I expanded "Acc" to "Accel" to make it slightly more obvious what this abbreviation stood for.
+* I also added the word "Axis" to make it more immediately clear what the XYZ values were about.
 
 > names(extract) <- gsub("^f", "FFT", names(extract))  
 > names(extract) <- gsub("^t", "", names(extract))  
