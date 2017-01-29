@@ -6,6 +6,14 @@ This repo contains the following files:
 * **CodeBook.md:** This file describes the variables and summaries calculated in the averages.csv file.
 * **README.md:** This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.csv.
 
+## Running run_analysis.R
+In order for run_analysis.R to work, you must download and unzip the UCI HAR dataset (link provided above), and place the "UCI HAR dataset" folder in your R working directory.
+
+## Reading averages.csv into R
+If you place averages.csv into your R working directory, you can read the data into R with the following command:
+
+> averages <- read.csv(file = "averages.csv")
+
 ## Explanation of the run_analysis.R script
 The run_analysis.R script was written to meet the requirements set out in the course project instructions:
 ### 1\. Merges the training and the test sets to create one data set.
@@ -43,7 +51,7 @@ The script accomplishes this merge process by doing the following:
     > complete <- bind_rows(test, train)  
 
 ### 2\. Extracts only the measurements on the mean and standard deviation for each measurement.
-The dplyr select function is used to drop all columns except the Subject and Activity columns and all columns with variable names that contain "mean()", "std()". The resulting data frame is called "extract".
+The dplyr select function is used to drop all columns *except* the Subject and Activity columns and all columns with variable names that contain "mean()", "std()". The resulting data frame is called "extract".
 
 > extract <- select(complete, matches("Subject|Activity|mean\\(\\)|std\\(\\)"))
 
@@ -65,14 +73,14 @@ The gsub function is again used to make the variable names more descriptive. The
 * Avoid repetition where possible.
 * Try not to make the variable names too long.
 
-Unfortunately, I don't think it is possible to make the variable names *perfectly* descriptive unless you make them a mile long. Also, my ability to make them more descriptive is limited by my lack of understanding of accelerometer and gyroscope data. But anyway, here are some of the choices I made:
+Unfortunately, I don't think it is possible to make the variable names *perfectly* descriptive unless they are a mile long. Also, my ability to make them more descriptive is limited by my lack of understanding of accelerometer and gyroscope data. But anyway, here are some of the choices I made:
 
 * I eliminated the "t" from the beginning of all time domain values. In CodeBook.md I explain that unless otherwise indicated, all values belong to the time domain.
 * For frequency domain values, I replaced the "f" with "FFT", and explained in CodeBook.md that this indicates the values were the results of a Fast Fourier Transform operation.
-* I eliminated the duplication of the word "Body" that existed in some variable names in the UCI HAR dataset.
+* I eliminated the duplication of the word "Body" that existed in some variable names in the UCI HAR dataset, as I believe that is a minor mistake in the original dataset.
 * Based on the description of the UCI HAR dataset in features_info.txt and http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones, I renamed "BodyGyro" to "AngularVelocity" and "BodyAccJerk" to "LinearJerk", as I felt these were more a little more understandable than the original names. I also trimmed the "AngularVelocityJerk" variable (resulted from the gsub operation on "BodyGyroJerk") to just "AngularJerk".
 * I expanded "Acc" to "Accel" to make it slightly more obvious what this abbreviation stood for.
-* I also added the word "Axis" to make it more immediately clear what the XYZ values were about.
+* I also added the word "Axis" to make it more immediately clear what the X-Y-Z values were about.
 
 > names(extract) <- gsub("^f", "FFT", names(extract))  
 > names(extract) <- gsub("^t", "", names(extract))  
