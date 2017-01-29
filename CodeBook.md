@@ -9,14 +9,14 @@ Hopefully the variables are mostly self-explanatory, however some additional des
 
 * **Subject:** The individual performing the activity, indicated by a number between 1 and 30.
 * **Activity:** The specific activity being performed by the subject.
-* StdDeviation: Standard deviation.
-* Mag: Magnitude calculated using the Euclidean norm.
-* BodyAccel: Body linear acceleration; "tBodyAcc" in UCI HAR dataset.
-* GravityAccel: Gravity acceleration; "tGravityAcc" in UCI HAR dataset.
-* AngularVelocity: Angular velocity derived from BodyAccel ("tBodyAcc") values; AngularVelocity is "tBodyGyro" in the UCI HAR dataset.
-* LinearJerk: Jerk signal derived in time from body linear acceleration signal; "tBodyAccJerk" in UCI HAR dataset.
-* AngularJerk: Jerk signal derived in time from angular velocity; "tBodyGyroJerk" in UCI HAR dataset.
-* FFT: Indicates that the value is a result of a Fast Fourier Transform operation, that is, it has been converted from time domain to frequency domain.
+* **StdDeviation:** Standard deviation.
+* **Mag:** Magnitude calculated using the Euclidean norm.
+* **BodyAccel:** Body linear acceleration; "tBodyAcc" in UCI HAR dataset.
+* **GravityAccel:** Gravity acceleration; "tGravityAcc" in UCI HAR dataset.
+* **AngularVelocity:** Angular velocity derived from BodyAccel ("tBodyAcc") values; AngularVelocity is "tBodyGyro" in the UCI HAR dataset.
+* **LinearJerk:** Jerk signal derived in time from body linear acceleration signal; "tBodyAccJerk" in UCI HAR dataset.
+* **AngularJerk:** Jerk signal derived in time from angular velocity; "tBodyGyroJerk" in UCI HAR dataset.
+* **FFT:** Indicates that the value is a result of a Fast Fourier Transform operation, that is, it has been converted from time domain to frequency domain.
 
 ## Notes:
 * As indicated above, all variables are understood to indicate that the value given is a mean of the measurement being described; if "Mean" also appears in the variable name, it means that the values in this variable are the mean of several mean values (an average of a series of averages).
