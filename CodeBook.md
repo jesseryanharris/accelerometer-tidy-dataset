@@ -7,8 +7,8 @@ The averages.csv dataset contains the mean values of all the mean and standard d
 # A guide to reading the variables
 Hopefully the variables are mostly self-explanatory, however some additional description is probably helpful. To avoid repetition, I have not included a description for each variable; following is a "legend" of sorts that should clarify what the variables are measuring.
 
-* Subject: The individual performing the activity, indicated by a number between 1 and 30.
-* Activity: The specific activity being performed by the subject.
+* **Subject:** The individual performing the activity, indicated by a number between 1 and 30.
+* **Activity:** The specific activity being performed by the subject.
 * StdDeviation: Standard deviation.
 * Mag: Magnitude calculated using the Euclidean norm.
 * BodyAccel: Body linear acceleration; "tBodyAcc" in UCI HAR dataset.
