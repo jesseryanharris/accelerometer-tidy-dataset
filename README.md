@@ -38,9 +38,9 @@ The script accomplishes this merge process by doing the following:
 
 4. The dplyr bind_cols and bind_rows functions are used to attach all the data frames together, making a data frame called "complete".
 
-    > test <- bind_cols(subject_test, y_test, x_test)
-    > train <- bind_cols(subject_train, y_train, x_train)
-    > complete <- bind_rows(test, train)
+    > test <- bind_cols(subject_test, y_test, x_test)  
+    > train <- bind_cols(subject_train, y_train, x_train)  
+    > complete <- bind_rows(test, train)  
 
 ### 2\. Extracts only the measurements on the mean and standard deviation for each measurement.
 The dplyr select function is used to drop all columns except the Subject and Activity columns and all columns with variable names that contain "mean()", "std()". The resulting data frame is called "extract".
