@@ -24,71 +24,71 @@ Hopefully the variables are mostly self-explanatory, however some additional des
 * For a more technical description of how the original values were derived from the raw signal data, see "features_info.txt" in the UCI HAR dataset.
 
 # Complete list of variables
-Subject
-Activity
-BodyAccelMeanXAxis
-BodyAccelMeanYAxis
-BodyAccelMeanZAxis
-BodyAccelStdDeviationXAxis
-BodyAccelStdDeviationYAxis
-BodyAccelStdDeviationZAxis
-GravityAccelMeanXAxis
-GravityAccelMeanYAxis
-GravityAccelMeanZAxis
-GravityAccelStdDeviationXAxis
-GravityAccelStdDeviationYAxis
-GravityAccelStdDeviationZAxis
-LinearJerkMeanXAxis
-LinearJerkMeanYAxis
-LinearJerkMeanZAxis
-LinearJerkStdDeviationXAxis
-LinearJerkStdDeviationYAxis
-LinearJerkStdDeviationZAxis
-AngularVelocityMeanXAxis
-AngularVelocityMeanYAxis
-AngularVelocityMeanZAxis
-AngularVelocityStdDeviationXAxis
-AngularVelocityStdDeviationYAxis
-AngularVelocityStdDeviationZAxis
-AngularJerkMeanXAxis
-AngularJerkMeanYAxis
-AngularJerkMeanZAxis
-AngularJerkStdDeviationXAxis
-AngularJerkStdDeviationYAxis
-AngularJerkStdDeviationZAxis
-BodyAccelMagMean
-BodyAccelMagStdDeviation
-GravityAccelMagMean
-GravityAccelMagStdDeviation
-LinearJerkMagMean
-LinearJerkMagStdDeviation
-AngularVelocityMagMean
-AngularVelocityMagStdDeviation
-AngularJerkMagMean
-AngularJerkMagStdDeviation
-FFTBodyAccelMeanXAxis
-FFTBodyAccelMeanYAxis
-FFTBodyAccelMeanZAxis
-FFTBodyAccelStdDeviationXAxis
-FFTBodyAccelStdDeviationYAxis
-FFTBodyAccelStdDeviationZAxis
-FFTLinearJerkMeanXAxis
-FFTLinearJerkMeanYAxis
-FFTLinearJerkMeanZAxis
-FFTLinearJerkStdDeviationXAxis
-FFTLinearJerkStdDeviationYAxis
-FFTLinearJerkStdDeviationZAxis
-FFTAngularVelocityMeanXAxis
-FFTAngularVelocityMeanYAxis
-FFTAngularVelocityMeanZAxis
-FFTAngularVelocityStdDeviationXAxis
-FFTAngularVelocityStdDeviationYAxis
-FFTAngularVelocityStdDeviationZAxis
-FFTBodyAccelMagMean
-FFTBodyAccelMagStdDeviation
-FFTLinearJerkMagMean
-FFTLinearJerkMagStdDeviation
-FFTAngularVelocityMagMean
-FFTAngularVelocityMagStdDeviation
-FFTAngularJerkMagMean
-FFTAngularJerkMagStdDeviation
+* Subject
+* Activity
+* BodyAccelMeanXAxis
+* BodyAccelMeanYAxis
+* BodyAccelMeanZAxis
+* BodyAccelStdDeviationXAxis
+* BodyAccelStdDeviationYAxis
+* BodyAccelStdDeviationZAxis
+* GravityAccelMeanXAxis
+* GravityAccelMeanYAxis
+* GravityAccelMeanZAxis
+* GravityAccelStdDeviationXAxis
+* GravityAccelStdDeviationYAxis
+* GravityAccelStdDeviationZAxis
+* LinearJerkMeanXAxis
+* LinearJerkMeanYAxis
+* LinearJerkMeanZAxis
+* LinearJerkStdDeviationXAxis
+* LinearJerkStdDeviationYAxis
+* LinearJerkStdDeviationZAxis
+* AngularVelocityMeanXAxis
+* AngularVelocityMeanYAxis
+* AngularVelocityMeanZAxis
+* AngularVelocityStdDeviationXAxis
+* AngularVelocityStdDeviationYAxis
+* AngularVelocityStdDeviationZAxis
+* AngularJerkMeanXAxis
+* AngularJerkMeanYAxis
+* AngularJerkMeanZAxis
+* AngularJerkStdDeviationXAxis
+* AngularJerkStdDeviationYAxis
+* AngularJerkStdDeviationZAxis
+* BodyAccelMagMean
+* BodyAccelMagStdDeviation
+* GravityAccelMagMean
+* GravityAccelMagStdDeviation
+* LinearJerkMagMean
+* LinearJerkMagStdDeviation
+* AngularVelocityMagMean
+* AngularVelocityMagStdDeviation
+* AngularJerkMagMean
+* AngularJerkMagStdDeviation
+* FFTBodyAccelMeanXAxis
+* FFTBodyAccelMeanYAxis
+* FFTBodyAccelMeanZAxis
+* FFTBodyAccelStdDeviationXAxis
+* FFTBodyAccelStdDeviationYAxis
+* FFTBodyAccelStdDeviationZAxis
+* FFTLinearJerkMeanXAxis
+* FFTLinearJerkMeanYAxis
+* FFTLinearJerkMeanZAxis
+* FFTLinearJerkStdDeviationXAxis
+* FFTLinearJerkStdDeviationYAxis
+* FFTLinearJerkStdDeviationZAxis
+* FFTAngularVelocityMeanXAxis
+* FFTAngularVelocityMeanYAxis
+* FFTAngularVelocityMeanZAxis
+* FFTAngularVelocityStdDeviationXAxis
+* FFTAngularVelocityStdDeviationYAxis
+* FFTAngularVelocityStdDeviationZAxis
+* FFTBodyAccelMagMean
+* FFTBodyAccelMagStdDeviation
+* FFTLinearJerkMagMean
+* FFTLinearJerkMagStdDeviation
+* FFTAngularVelocityMagMean
+* FFTAngularVelocityMagStdDeviation
+* FFTAngularJerkMagMean
+* FFTAngularJerkMagStdDeviation
