@@ -1,8 +1,10 @@
 # Tidy Dataset Derived from UCI HAR Dataset (Coursera "Getting and Cleaning Data" Course Project)
-The tidy dataset contained in this GitHub repo (filename: averages.csv) is derived from the UCI HAR dataset, which I downloaded from here:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+This repo contains the following files:
 
-The run_analysis.R script in this repo was used to process the raw data in the UCI HAR dataset and output the tidied version, the averages.csv file.
+* **averages.csv:** A tidy dataset derived from the UCI HAR dataset, which I downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+* **run_analysis.R:** This script was used to process the raw data in the UCI HAR dataset and output the averages.csv file.
+* **CodeBook.md:** This file describes the variables and summaries calculated in the averages.csv file.
+** README.md:* This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.csv.
 
 ## Explanation of the run_analysis.R script
 The run_analysis.R script was written to meet the requirements set out in the course project instructions:
@@ -56,7 +58,7 @@ The gsub function is used to replace the numbers in the Activity column with a t
 > extract$Activity <- gsub("6", "laying", extract$Activity)  
 
 ### 4\. Appropriately labels the data set with descriptive variable names.
-The gsub function is again used to make the variable names more descriptive. Some limited regex expressions were used in this step. The principles I followed in trying to make the variables names more descriptive were:
+The gsub function is again used to make the variable names more descriptive. The principles I followed in trying to make the variables names more descriptive were:
 
 * Avoid abbreviation when it harms readability.
 * Use CamelCase style to delineate words rather than add whitespace or special characters.
