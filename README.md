@@ -1,18 +1,17 @@
 # Tidy Dataset Derived from UCI HAR Dataset (Coursera "Getting and Cleaning Data" Course Project)
 This repo contains the following files:
 
-* **averages.csv:** A tidy dataset derived from the UCI HAR dataset, which I downloaded from here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip.
-* **run_analysis.R:** This script was used to process the raw data in the UCI HAR dataset and output the averages.csv file.
-* **CodeBook.md:** This file describes the variables and summaries calculated in the averages.csv file.
-* **README.md:** This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.csv.
+* **run_analysis.R:** Used to process the raw data in the UCI HAR dataset and output an independent tidy dataset called averages.txt.
+* **CodeBook.md:** Describes the variables and summaries calculated in the averages.txt file.
+* **README.md:** This file, which explains the methods used to process the UCI HAR dataset and output the tidy dataset, averages.txt.
 
 ## Running run_analysis.R
-In order for run_analysis.R to work, you must download and unzip the UCI HAR dataset (link provided above), and place the "UCI HAR dataset" folder in your R working directory.
+In order for run_analysis.R to work, you must download and unzip the UCI HAR dataset, which can be downloaded here: https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip. Place the unzipped "UCI HAR Dataset" folder in your R working directory.
 
-## Reading averages.csv into R
-If you place averages.csv into your R working directory, you can read the data into R with the following command:
+## Reading averages.txt into R
+You can read the averages.txt file outputted by the script back into R by placing it in your R working directory and running the following command:
 
-> averages <- read.csv(file = "averages.csv")
+> averages <- read.table(file = "averages.txt", header = TRUE)
 
 ## Explanation of the run_analysis.R script
 The run_analysis.R script was written to meet the requirements set out in the course project instructions:
@@ -29,7 +28,7 @@ The script accomplishes this merge process by doing the following:
     > x_train <- read.csv(file = "UCI HAR Dataset/train/X_train.txt", sep = "", header = FALSE)  
     > y_train <- read.csv(file = "UCI HAR Dataset/train/y_train.txt", sep = "", header = FALSE)
 
-2. For the R data frame generated from features.txt, the script drops the numbering column, then uses the matrix transpose function (t) to reshape the results into a 1 x 561 data frame. This causes the variable names to be horizontally arranged so they can be easily assigned as variable names to the data in the next step.
+2. For the R data frame generated from features.txt, the script drops the numbering column, then uses the matrix transpose function (t) to reshape the results into a 1 x 561 data frame. This causes the variable names to be arranged such that they can be easily assigned as variable names to the data in the next step.
 
     > features <- features %>% select(2) %>% t  
 	
@@ -101,6 +100,6 @@ The dplyr group_by function is used to group the data by Subject and then Activi
 
 > final <- group_by(extract, Subject, Activity) %>% summarise_each(funs(mean))
 	
-Finally, the write.csv function is used to output the tidy data set as a file called "averages.csv".
+Finally, the write.table function is used to output the tidy data set as a file called "averages.txt".
 
-> write.csv(final, file = "averages.csv", row.names = FALSE)
+> write.table(final, file = "averages.txt", row.names = FALSE)
